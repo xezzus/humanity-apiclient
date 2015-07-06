@@ -1,0 +1,37 @@
+{
+    "name": "humanity/apiclient",
+    "description": "API client for humanity or RestAPI",
+    "keywords": [
+        "PHP",
+        "humanity",
+        "API",
+        "client"
+    ],
+    "homepage": "https://github.com/xezzus/humanity-apiclient",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Buturlakin Andrey",
+            "email": "xezzus@gmail.com",
+            "homepage": "https://github.com/xezzus",
+            "role": "Founder and project lead"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/xezzus/humanity-apiclient/issues",
+        "wiki": "https://github.com/xezzus/humanity-apiclient/wiki",
+        "source": "https://github.com/xezzus/humanity-apiclient"
+    },
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "psr-4": {"humanity\\": ""}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    }
+}
