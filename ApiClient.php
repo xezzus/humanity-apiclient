@@ -56,9 +56,9 @@ class ApiClient {
         }
 
         if($type == 'apps'){
-            $accept = 'application/apps';
+            $accept = 'Accept: application/apps';
         } else if($type == 'widget'){
-            $accept = 'application/widget';
+            $accept = 'Accept: application/widget';
         } else {
             $accept = '*/*';
         }
