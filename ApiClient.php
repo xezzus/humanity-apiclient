@@ -75,6 +75,12 @@ class ApiClient {
             CURLOPT_USERAGENT=>"humanity",
         ]);
         curl_setopt($curl,CURLOPT_HTTPHEADER,[$accept]);
+        $cookie = [];
+        foreach($_COOKIE as $name=>$value){
+            $cookie[] = urlencode($name).'='.urlencode($value);
+        }
+        $cookie = implode('; ',$cookie);
+        curl_setopt($curl,CURLOPT_COOKIE,$cookie);
         curl_setopt($curl,CURLOPT_POSTFIELDS,http_build_query($posts));
         $data = curl_exec($curl);
         curl_close($curl);
