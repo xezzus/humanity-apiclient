@@ -13,7 +13,8 @@ namespace humanity;
  * $client = new humanity\ApiClient([
  *      'url'=>'http://example.com'
  *      'app_id'=>'123',
- *      'sig'=>'as897asf897asdf789asdf897asdf987asdf'
+ *      'sig'=>'as897asf897asdf789asdf897asdf987asdf',
+ *      'httpauth'=>'user:pass'
  * ]);
  *
  * $html = $client->widget([
@@ -75,6 +76,10 @@ class ApiClient {
             CURLOPT_USERAGENT=>"humanity",
         ]);
         curl_setopt($curl,CURLOPT_HTTPHEADER,[$accept]);
+        if(isset($this->config['httpauth'])){
+            curl_setopt($curl,CURLOPT_HTTPAUTH,CURLAUTH_BASIC);
+            curl_setopt($curl,CURLOPT_USERPWD,$this->config['httpauth']); 
+        }
         $cookie = [];
         foreach($_COOKIE as $name=>$value){
             $cookie[] = urlencode($name).'='.urlencode($value);
